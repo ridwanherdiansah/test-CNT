@@ -2,11 +2,16 @@ import { useState } from "react";
 import { KeyRound, User, Mail, Headset } from 'lucide-react';
 
 const Auth = () => {
+
+    if (localStorage.getItem('userData')) {
+        location.href = '/home';
+        return null
+    }
     const [activeTab, setActiveTab] = useState('login');
 
     const renderContentAuth = () => {
         switch (activeTab) {
-            case 'login' : 
+            case 'login':
                 return (
                     <div className="space-y-6">
                         <div className="text-center">
@@ -16,7 +21,7 @@ const Auth = () => {
                             <h2 className="text-xl font-bold text-gray-800">Log in</h2>
                             <p className="text-gray-600">Reading enthusiast since 2020</p>
                         </div>
-                        
+
                         <div className="relative">
                             <User className="absolute left-3 top-3 text-gray-400" size={20} />
                             <input
@@ -34,35 +39,35 @@ const Auth = () => {
                             />
                         </div>
                         <div className="border-2 rounded-xl p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl text-white">
-                            <button 
-                            onClick={() => {
-                                const dummyUser =  {
-                                    id      : 1,
-                                    fullName : 'ridwan',
-                                    email: 'ridwan@gmail.com',
-                                    role : 'admin'
-                                }
+                            <button
+                                onClick={() => {
+                                    const dummyUser = {
+                                        id: 1,
+                                        fullName: 'admin',
+                                        email: 'admin@gmail.com',
+                                        role: 'admin'
+                                    }
 
-                                localStorage.setItem('userData', JSON.stringify(dummyUser));
-                                // reload param 
-                                location.href = "/"
-                            }}
-                            className="text-xl font-bold text-center w-full">Login</button>
+                                    localStorage.setItem('userData', JSON.stringify(dummyUser));
+                                    // reload param 
+                                    location.href = "/home"
+                                }}
+                                className="text-xl font-bold text-center w-full">Login</button>
                         </div>
                         <div className="text-center">
                             <span
-                            onClick={() => setActiveTab('forgotPsw')}
-                            className="text-blue-600/100 cursor-pointer"> Lupa Password ?</span>
+                                onClick={() => setActiveTab('forgotPsw')}
+                                className="text-blue-600/100 cursor-pointer"> Lupa Password ?</span>
                         </div>
                         <div className="text-center">
-                            Belum punya akun ? 
+                            Belum punya akun ?
                             <span
-                            onClick={() => setActiveTab('register')}
-                            className="text-blue-600/100 cursor-pointer"> Daftar Disini</span>
+                                onClick={() => setActiveTab('register')}
+                                className="text-blue-600/100 cursor-pointer"> Daftar Disini</span>
                         </div>
                     </div>
                 );
-            case 'register' :
+            case 'register':
                 return (
                     <div className="space-y-6">
                         <div className="text-center">
@@ -72,7 +77,7 @@ const Auth = () => {
                             <h2 className="text-xl font-bold text-gray-800">Registrasi</h2>
                             <p className="text-gray-600">Reading enthusiast since 2020</p>
                         </div>
-                        
+
                         <div className="relative">
                             <Mail className="absolute left-3 top-3 text-gray-400" size={20} />
                             <input
@@ -117,14 +122,14 @@ const Auth = () => {
                             <button className="text-xl font-bold text-center w-full">Registrasi</button>
                         </div>
                         <div className="text-center">
-                            Sudah punya akun ? 
+                            Sudah punya akun ?
                             <span
-                            onClick={() => setActiveTab('login')}
-                            className="text-blue-600/100 cursor-pointer"> Login Disini</span>
+                                onClick={() => setActiveTab('login')}
+                                className="text-blue-600/100 cursor-pointer"> Login Disini</span>
                         </div>
                     </div>
                 );
-            case 'forgotPsw' :
+            case 'forgotPsw':
                 return (
                     <div className="space-y-6">
                         <div className="text-center">
@@ -134,7 +139,7 @@ const Auth = () => {
                             <h2 className="text-xl font-bold text-gray-800">Forgot Password</h2>
                             <p className="text-gray-600">Reading enthusiast since 2020</p>
                         </div>
-                        
+
                         <div className="relative">
                             <Mail className="absolute left-3 top-3 text-gray-400" size={20} />
                             <input
@@ -148,22 +153,22 @@ const Auth = () => {
                         </div>
                         <div className="text-center">
                             <span
-                            onClick={() => setActiveTab('login')}
-                            className="text-blue-600/100 cursor-pointer"> Back</span>
+                                onClick={() => setActiveTab('login')}
+                                className="text-blue-600/100 cursor-pointer"> Back</span>
                         </div>
                     </div>
                 );
         }
 
     }
-    return(
-    <div className="min-h-screen bg-gray-50 max-w-md mx-auto">
-      
-      <main className="px-4 py-6 pb-20">
-        {renderContentAuth()}
-      </main>
+    return (
+        <div className="min-h-screen bg-gray-50 max-w-md mx-auto">
 
-    </div>
+            <main className="px-4 py-6 pb-20">
+                {renderContentAuth()}
+            </main>
+
+        </div>
     );
 }
 

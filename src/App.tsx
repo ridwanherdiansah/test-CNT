@@ -4,9 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Index from "./pages/Index";
-import Auth from "./pages/auth/Login";
-import NotFound from "./pages/NotFound";
+import MainPages from "./pages/Index";
 
 const queryClient = new QueryClient();
 
@@ -16,27 +14,17 @@ const isLoggedIn = () => {
 };
 
 // Komponen untuk proteksi route    
-const PrivateRoute = ({ children }: { children: JSX.Element }) => {
-  return isLoggedIn() ? children : <Navigate to="/login" />;
+const PrivateRoute = ({ element }: { element: JSX.Element }) => {
+  return isLoggedIn() ? element : <Navigate to="/login" />;
 };
+
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Routes>
-          {/* Public route */}
-          <Route path="/login" element={<Auth />} />
-
-          {/* Protected route */}
-          <Route path="/" element={<PrivateRoute><Index /></PrivateRoute>} />
-
-          {/* Catch-all */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <MainPages />
     </TooltipProvider>
   </QueryClientProvider>
 );
