@@ -1,0 +1,55 @@
+.
+├── bun.lockb
+├── components.json
+├── Dockerfile
+├── env.development
+├── env.example
+├── env.production
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+├── public
+│   ├── favicon.ico
+│   ├── placeholder.svg
+│   └── robots.txt
+├── README.md
+├── setup.js
+├── src
+│   ├── App.css
+│   ├── App.tsx
+│   ├── components
+│   │   ├── BookCard.tsx
+│   │   ├── BottomNav.tsx
+│   │   ├── BrowseLibrary.tsx
+│   │   ├── HeaderNav.tsx
+│   │   ├── ProgressCard.tsx
+│   │   └── ui
+│   ├── context
+│   │   └── private-context.tsx
+│   ├── data
+│   │   └── dummyData.ts
+│   ├── hooks
+│   │   ├── use-mobile.tsx
+│   │   └── use-toast.ts
+│   ├── index.css
+│   ├── lib
+│   │   └── utils.ts
+│   ├── main.tsx
+│   ├── pages
+│   │   ├── auth
+│   │   ├── Index.tsx
+│   │   ├── NotFound.tsx
+│   │   └── private
+│   ├── services
+│   │   └── api.ts
+│   └── vite-env.d.ts
+├── structure.txt
+├── tailwind.config.ts
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+
+13 directories, 40 files

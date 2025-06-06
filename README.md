@@ -1,15 +1,31 @@
-# Book Tracker App Frontend
+# 📘 Book Tracker App - Frontend Contribution
 
-A modern React application for managing your reading list, built with Vite, TypeScript, and shadcn/ui.
+## 🧑‍💻 Role Saya: Frontend Developer
 
-## Features
+Saya memilih role sebagai **Frontend Developer** dalam tes ini. Fokus saya adalah membangun antarmuka pengguna untuk fitur-fitur berikut:
 
-- 📚 Add, view, update, and delete books
-- 📖 Track reading status (unread/reading/completed)
-- 🎨 Modern and responsive UI with Tailwind CSS
-- 🔄 Real-time updates
-- ⚡ Fast and efficient with React + Vite
-- 🛡️ Type-safe with TypeScript
+- 🎨 Halaman Login
+- 🎨 Halaman Register
+- 🎨 Halaman Forgot Password
+- 🎨 Halaman Settings
+- 🎨 Halaman Insight (dummy)
+- 🎨 (Optional) Fitur tambahan UI
+
+Semua halaman ini dibangun menggunakan komponen React dan Tailwind CSS, serta beberapa menggunakan komponen `shadcn/ui`. Halaman dibuat tanpa koneksi ke backend (dummy).
+
+---
+
+## 📄 Halaman yang Dibuat
+
+| Halaman             | Path                   | Deskripsi                                           |
+| ------------------- | ---------------------- | --------------------------------------------------- |
+| **Login**           | `/auth/login`          | Form login dengan UI modern                         |
+| **Register**        | `/auth/register`       | Form registrasi pengguna baru                       |
+| **Forgot Password** | `/auth/forgotpassword` | Form reset password (dummy)                         |
+| **Settings**        | `/settings`            | Halaman pengaturan profil pengguna (dummy)          |
+| **Insight**         | `/insight`             | Halaman insight data pengguna (dummy / placeholder) |
+
+---
 
 ## Tech Stack
 
@@ -21,90 +37,93 @@ A modern React application for managing your reading list, built with Vite, Type
 - ESLint
 - PostCSS
 
+---
+
 ## Project Structure
 
 ```
 frontend/
-├── src/
-│   ├── components/     # React components
-│   ├── data/          # Data and mock files
-│   ├── hooks/         # Custom React hooks
-│   ├── lib/           # Utility functions
-│   ├── pages/         # Page components
-│   ├── App.tsx        # Main React component
-│   ├── App.css        # App-specific styles
-│   ├── main.tsx       # React entry point
-│   └── index.css      # Global styles
-├── public/            # Static assets
-├── tailwind.config.ts # Tailwind configuration
-├── components.json    # shadcn/ui configuration
-├── postcss.config.js  # PostCSS configuration
-├── tsconfig.json      # TypeScript configuration
-├── vite.config.ts     # Vite configuration
-└── package.json       # Frontend dependencies
+├── bun.lockb
+├── components.json
+├── Dockerfile
+├── env.development
+├── env.example
+├── env.production
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+├── public
+│   ├── favicon.ico
+│   ├── placeholder.svg
+│   └── robots.txt
+├── README.md
+├── setup.js
+├── src
+│   ├── App.css
+│   ├── App.tsx
+│   ├── components
+│   │   ├── BookCard.tsx
+│   │   ├── BottomNav.tsx
+│   │   ├── BrowseLibrary.tsx
+│   │   ├── HeaderNav.tsx
+│   │   ├── ProgressCard.tsx
+│   │   └── ui
+│   ├── context
+│   │   └── private-context.tsx
+│   ├── data
+│   │   └── dummyData.ts
+│   ├── hooks
+│   │   ├── use-mobile.tsx
+│   │   └── use-toast.ts
+│   ├── index.css
+│   ├── lib
+│   │   └── utils.ts
+│   ├── main.tsx
+│   ├── pages
+│   │   ├── auth
+│   │   ├── Index.tsx
+│   │   ├── NotFound.tsx
+│   │   └── private
+│   ├── services
+│   │   └── api.ts
+│   └── vite-env.d.ts
+├── structure.txt
+├── tailwind.config.ts
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+
+13 directories, 40 files
+
 ```
+
+---
 
 ## Prerequisites
 
-- Node.js 16.x or later
-- npm or yarn
+- Node.js 16.x atau lebih baru
+- npm atau yarn
+
+---
 
 ## Getting Started
 
 1. Install dependencies:
-```bash
+
+````bash
 npm install
-```
+
 
 2. Start the development server:
+
 ```bash
 npm run dev
-```
+````
 
-The application will be available at http://localhost:5173
-
-## Development
-
-### Component Structure
-- Use functional components with TypeScript
-- Implement proper type definitions
-- Follow shadcn/ui component patterns
-
-### State Management
-- Use React hooks for local state
-- Implement custom hooks for shared logic
-- Consider context for global state
-
-### Styling
-- Use Tailwind CSS classes
-- Follow shadcn/ui design system
-- Maintain consistent spacing and colors
-
-### Type Safety
-- Define interfaces for all data structures
-- Use TypeScript strict mode
-- Implement proper error handling
-
-## Configuration Files
-
-### tailwind.config.ts
-- Tailwind CSS configuration
-- Custom theme settings
-- Plugin configurations
-
-### components.json
-- shadcn/ui component configuration
-- Style and theme settings
-
-### tsconfig.json
-- TypeScript configuration
-- Path aliases
-- Compiler options
-
-### vite.config.ts
-- Vite bundler configuration
-- Plugin settings
-- Build options
+The application will be available at [http://localhost:8080](http://localhost:8080)
 
 ## Available Scripts
 
