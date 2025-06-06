@@ -20,7 +20,7 @@ const BottomNav = () => {
     { id: 'library', icon: Book, label: 'Library' },
     { id: 'discover', icon: Search, label: 'Discover' },
     { id: 'reading', icon: TrendingUp, label: 'Reading' },
-    { id: 'profile', icon: User, label: 'Profile' },
+    { id: 'profile', icon: User, label: 'Profile' }
   ] as NavItem[];
 
   return (

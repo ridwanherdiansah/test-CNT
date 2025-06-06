@@ -9,7 +9,7 @@ import { toast } from "@/hooks/use-toast";
 
 const UserSettings = () => {
   const dataUser = JSON.parse(localStorage.getItem('userData'));
-  const [fullName, setFullName] = useState(dataUser.fullName);
+  const [fullName, setFullName] = useState(dataUser.name);
   const [email] = useState(dataUser.email);
   const [notifications, setNotifications] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
